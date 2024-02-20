@@ -15,6 +15,8 @@ echo 3 = Extract all client resource\mapdata
 echo 4 = Extract all ANI
 echo 5 = Extract all DDS
 echo 6 = Extract all ACT
+echo 7 = Extract all MSH
+echo 8 = Extract all SKN
 SET/P mode="Enter extraction mode [default: %mode%]:"
 SET/P outputdir=Enter directory name [default: %outputdir%]:
 
@@ -25,44 +27,62 @@ if /i %mode%==3 goto all
 if /i %mode%==4 goto ani
 if /i %mode%==5 goto dds
 if /i %mode%==6 goto act
+if /i %mode%==7 goto msh
+if /i %mode%==8 goto skn
 
 
 :only_dnt
-FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.dnt" quickbms.txt Resource0%%A.pak %outputdir%
-FOR %%B IN (10 11 12) DO quickbms.exe -Y -f "*.dnt" quickbms.txt Resource0%%B.pak %outputdir%
+FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.dnt" eyedentitygames.bms Resource0%%A.pak %outputdir%
+FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "*.dnt" eyedentitygames.bms Resource0%%B.pak %outputdir%
+FOR %%B IN (20 21 22 23 24 25) DO quickbms.exe -Y -f "*.dnt" eyedentitygames.bms Resource0%%B.pak %outputdir%
 goto finish
 
 :only_script
-FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.xml;*.lua" quickbms.txt Resource0%%A.pak %outputdir%
-FOR %%B IN (10 11 12) DO quickbms.exe -Y -f "*.xml;*.lua" quickbms.txt Resource%%B.pak %outputdir%
+FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.xml;*.lua" eyedentitygames.bms Resource0%%A.pak %outputdir%
+FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "*.xml;*.lua" eyedentitygames.bms Resource%%B.pak %outputdir%
+FOR %%B IN (20 21 22 23 24 25) DO quickbms.exe -Y -f "*.xml;*.lua" eyedentitygames.bms Resource%%B.pak %outputdir%
 goto finish
 
 :all_noaudiovideo
-FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "!*.ogg;!*.avi;!*.dds;!*.mp3;!*.wav" quickbms.txt Resource0%%A.pak %outputdir%
-FOR %%B IN (10 11 12) DO quickbms.exe -Y -f "!*.ogg;!*.avi;!*.dds;!*.mp3;!*.wav" quickbms.txt Resource%%B.pak %outputdir%
+FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "!*.ogg;!*.avi;!*.dds;!*.mp3;!*.wav" eyedentitygames.bms Resource0%%A.pak %outputdir%
+FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "!*.ogg;!*.avi;!*.dds;!*.mp3;!*.wav" eyedentitygames.bms Resource%%B.pak %outputdir%
+FOR %%B IN (20 21 22 23 24 25) DO quickbms.exe -Y -f "!*.ogg;!*.avi;!*.dds;!*.mp3;!*.wav" eyedentitygames.bms Resource%%B.pak %outputdir%
 goto finish
 
 :all
-FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y quickbms.txt Resource0%%A.pak %outputdir%
-FOR %%B IN (10 11 12) DO quickbms.exe -Y quickbms.txt Resource%%B.pak %outputdir%
+FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y eyedentitygames.bms Resource0%%A.pak %outputdir%
+FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y eyedentitygames.bms Resource%%B.pak %outputdir%
+FOR %%B IN (20 21 22 23 24 25) DO quickbms.exe -Y eyedentitygames.bms Resource%%B.pak %outputdir%
 goto finish
 
 :ani
-FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.ani" quickbms.txt Resource0%%A.pak %outputdir%
-FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "*.ani" quickbms.txt Resource%%B.pak %outputdir%
-FOR %%C IN (20 21 22 23) DO quickbms.exe -Y -f "*.ani" quickbms.txt Resource%%C.pak %outputdir%
+FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.ani" eyedentitygames.bms Resource0%%A.pak %outputdir%
+FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "*.ani" eyedentitygames.bms Resource%%B.pak %outputdir%
+FOR %%C IN (20 21 22 23 24 25) DO quickbms.exe -Y -f "*.ani" eyedentitygames.bms Resource%%C.pak %outputdir%
 goto finish
 
 :dds
-FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.dds" quickbms.txt Resource0%%A.pak %outputdir%
-FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "*.dds" quickbms.txt Resource%%B.pak %outputdir%
-FOR %%C IN (20 21 22 23) DO quickbms.exe -Y -f "*.dds" quickbms.txt Resource%%C.pak %outputdir%
+FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.dds" eyedentitygames.bms Resource0%%A.pak %outputdir%
+FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "*.dds" eyedentitygames.bms Resource%%B.pak %outputdir%
+FOR %%C IN (20 21 22 23 24 25) DO quickbms.exe -Y -f "*.dds" eyedentitygames.bms Resource%%C.pak %outputdir%
 goto finish
 
 :act
-FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.act" quickbms.txt Resource0%%A.pak %outputdir%
-FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "*.act" quickbms.txt Resource%%B.pak %outputdir%
-FOR %%C IN (20 21 22 23) DO quickbms.exe -Y -f "*.act" quickbms.txt Resource%%C.pak %outputdir%
+FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.act" eyedentitygames.bms Resource0%%A.pak %outputdir%
+FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "*.act" eyedentitygames.bms Resource%%B.pak %outputdir%
+FOR %%C IN (20 21 22 23 24 25) DO quickbms.exe -Y -f "*.act" eyedentitygames.bms Resource%%C.pak %outputdir%
+goto finish
+
+:msh
+FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.msh" eyedentitygames.bms Resource0%%A.pak %outputdir%
+FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "*.msh" eyedentitygames.bms Resource%%B.pak %outputdir%
+FOR %%C IN (20 21 22 23 24 25) DO quickbms.exe -Y -f "*.msh" eyedentitygames.bms Resource%%C.pak %outputdir%
+goto finish
+
+:skn
+FOR %%A IN (0 1 2 3 4 5 6 7 8 9) DO quickbms.exe -Y -f "*.skn" eyedentitygames.bms Resource0%%A.pak %outputdir%
+FOR %%B IN (10 11 12 13 14 15 16 17 18 19) DO quickbms.exe -Y -f "*.skn" eyedentitygames.bms Resource%%B.pak %outputdir%
+FOR %%C IN (20 21 22 23 24 25) DO quickbms.exe -Y -f "*.skn" eyedentitygames.bms Resource%%C.pak %outputdir%
 goto finish
 
 :finish
