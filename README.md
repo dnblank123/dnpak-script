@@ -19,9 +19,8 @@ It has 4 modes of extraction:
 
 
 How to use it:
-- **All files goes directly into the game folder (script.bat , quickbms.txt , quickbms.exe)**
+- **All files goes directly into the game folder (script.bat , eyedentitygames.txt , quickbms.exe)**
 - You will need to get quickbms binary from http://aluigi.altervista.org/quickbms.htm
-- Download those 3 files into (script.bat, eyedentitygames.bms and quickbms.exe) from this repo and put them in client
 - Run script.bat
 - .....
 - Profit ?
