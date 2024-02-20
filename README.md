@@ -19,7 +19,7 @@ It has 4 modes of extraction:
 
 
 How to use it:
-- **All files goes directly into the game folder (script.bat , eyedentitygames.txt , quickbms.exe)**
+- **All files goes directly into the game folder (script.bat, eyedentitygames.bms, quickbms.exe)**
 - You will need to get quickbms binary from http://aluigi.altervista.org/quickbms.htm
 - Run script.bat
 - .....
